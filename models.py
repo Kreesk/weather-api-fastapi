@@ -5,3 +5,7 @@ class WeatherResponse(BaseModel):
     temperature: float  # Температура в градусах Цельсия
     description: str   # Описание погоды (например, "ясно")
     humidity: int      # Влажность в процентах
+
+class ForecastResponse(BaseModel):
+    city : str
+    forecast: list[WeatherResponse]

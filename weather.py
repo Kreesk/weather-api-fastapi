@@ -8,6 +8,7 @@ BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
 FORECAST_URL = "http://api.openweathermap.org/data/2.5/forecast"
 
 
+
 async def get_current_weather(city: str) -> dict:
     async with httpx.AsyncClient() as client:
         params = {"q": city, "appid": API_KEY, "units": "metric", "lang": "ru"}

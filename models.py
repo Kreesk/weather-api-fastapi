@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import List
 
 class WeatherResponse(BaseModel):
     city: str
@@ -8,4 +9,4 @@ class WeatherResponse(BaseModel):
 
 class ForecastResponse(BaseModel):
     city : str
-    forecast: list[WeatherResponse]
+    forecast: List[WeatherResponse]

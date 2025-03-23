@@ -12,10 +12,8 @@ async def get_current_weather(city: str) -> dict:
     async with httpx.AsyncClient() as client:
         params = {"q": city, "appid": API_KEY, "units": "metric", "lang": "ru"}
         response = await client.get(BASE_URL, params=params)
-
         if response.status_code != 200:
             raise ValueError("Город не найден или ошибка API")
-
         data = response.json()
         return {
             "city": data["name"],
